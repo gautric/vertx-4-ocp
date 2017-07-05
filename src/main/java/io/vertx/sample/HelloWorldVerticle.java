@@ -6,11 +6,13 @@ public class HelloWorldVerticle extends AbstractVerticle {
 
   @Override
   public void start() {
-    String message = System.getenv("VERTX_4_OCP_MESSAGE");
+    String messageSystemEnv = System.getenv("VERTX_4_OCP_MESSAGE");
 
-    if(message==null || message.length()==0){
-      message = "Hello world !!";
+    if(messageSystemEnv == null || messageSystemEnv.length()==0){
+      messageSystemEnv = "Hello world !!";
     }
+
+    final String message = messageSystemEnv;
 
     System.out.println("Message " + message);
 
