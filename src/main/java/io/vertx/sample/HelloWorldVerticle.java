@@ -7,7 +7,7 @@ public class HelloWorldVerticle extends AbstractVerticle {
   @Override
   public void start() {
     vertx.createHttpServer()
-      .requestHandler(req -> req.response().end("Hello World !"))
+      .requestHandler(req -> req.response().end("Hello World ! おはようございます"))
       .listen(8080);
   }
 }
